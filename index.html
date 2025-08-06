@@ -1,0 +1,272 @@
+<!DOCTYPE html><html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yoshop - المتجر العالمي</title>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background-color: #f4f6f9;
+      color: #333;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+    header {
+      background: linear-gradient(to left, #00c6ff, #0072ff);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.2rem;
+    }
+    .breaking-news {
+      background-color: #ff4757;
+      color: white;
+      padding: 10px 0;
+      text-align: center;
+      font-weight: bold;
+      animation: marquee 15s linear infinite;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    @keyframes marquee {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+    nav {
+      background: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-around;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 40px;
+      z-index: 998;
+    }
+    nav a {
+      text-decoration: none;
+      color: #0072ff;
+      font-weight: bold;
+    }
+    .hero {
+      background: url('https://images.unsplash.com/photo-1602526216075-d00ba1c0e2e4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+      font-size: 2rem;
+      font-weight: bold;
+      position: relative;
+    }
+    .countdown {
+      position: absolute;
+      bottom: 20px;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-size: 1rem;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+    }
+    .card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    }
+    .card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+    .card-content {
+      padding: 20px;
+      text-align: center;
+    }
+    .card-content h3 {
+      font-size: 1.5rem;
+      color: #0072ff;
+      margin-bottom: 10px;
+    }
+    .card-content .price {
+      font-size: 1.2rem;
+      color: #27ae60;
+      margin-bottom: 15px;
+    }
+    .card-content .btn {
+      background-color: #25D366;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      transition: background 0.3s;
+    }
+    .card-content .btn:hover {
+      background-color: #20b858;
+    }
+    .section-title {
+      margin-top: 50px;
+      font-size: 2rem;
+      color: #2c3e50;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .about, .why-us, .reviews-section, .newsletter, .faq {
+      margin-top: 40px;
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    footer {
+      background-color: #222;
+      color: #ccc;
+      text-align: center;
+      padding: 30px 15px;
+      font-size: 0.9rem;
+      margin-top: 60px;
+    }
+    .newsletter input {
+      width: 80%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    .faq h3 {
+      color: #0072ff;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="breaking-news">🚨 شحن مجاني اليوم فقط على كل المنتجات! سارع بالطلب الآن 🚨</div>
+  <header>
+    <h1>🌍 Yoshop</h1>
+    <p>أكبر متجر تقني في الشرق الأوسط</p>
+  </header>  <nav>
+    <a href="#products">منتجات</a>
+    <a href="#about">من نحن</a>
+    <a href="#why-us">ليش إحنا؟</a>
+    <a href="#reviews">تقييمات</a>
+    <a href="#faq">الأسئلة</a>
+    <a href="#newsletter">اشترك</a>
+  </nav>  <div class="hero">
+    🔥 عروض وتقنيات حديثة في انتظارك!
+    <div class="countdown" id="countdown">العرض ينتهي خلال: 00:00:00</div>
+  </div>  <div class="container" id="products">
+    <h2 class="section-title">منتجات مميزة</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://m.media-amazon.com/images/I/71K7Q4PaGKL._AC_SX679_.jpg" alt="AirPods Pro 2" />
+        <div class="card-content">
+          <h3>سماعة AirPods Pro 2</h3>
+          <div class="price">400 جنيه</div>
+          <a href="https://wa.me/201013324490?text=أريد شراء AirPods Pro 2" class="btn">اطلب الآن</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://m.media-amazon.com/images/I/61hJ2-7qxHL._AC_SX679_.jpg" alt="سبورة أطفال" />
+        <div class="card-content">
+          <h3>سبورة تعليمية للأطفال</h3>
+          <div class="price">150 جنيه</div>
+          <a href="https://wa.me/201013324490?text=أريد شراء سبورة تعليمية" class="btn">اطلب الآن</a>
+        </div>
+      </div>
+    </div><div class="about" id="about">
+  <h2 class="section-title">من نحن؟</h2>
+  <p>نحن في Yoshop نقدم أفضل المنتجات التقنية والأدوات المنزلية الحديثة بجودة عالية وأسعار منافسة، مع توصيل سريع ودعم متواصل.</p>
+</div>
+
+<div class="why-us" id="why-us">
+  <h2 class="section-title">ليش تختار Yoshop؟</h2>
+  <ul>
+    <li>🔒 منتجات أصلية 100%</li>
+    <li>🚚 شحن سريع لجميع المحافظات</li>
+    <li>💬 دعم عبر واتساب 24/7</li>
+    <li>🎁 عروض وخصومات أسبوعية</li>
+    <li>🛡️ سياسة استرجاع خلال 14 يوم</li>
+    <li>💳 وسائل دفع متعددة</li>
+  </ul>
+</div>
+
+<div class="reviews-section" id="reviews">
+  <h2 class="section-title">آراء العملاء</h2>
+  <p>★ ★ ★ ★ ☆ – "المنتجات ممتازة والتوصيل أسرع من المتوقع!"</p>
+  <p>★ ★ ★ ★ ★ – "السماعة طلعت صوتها نقي جدًا وأنصح بيها"</p>
+  <p>★ ★ ★ ★ ☆ – "جربت السبورة لبنتي وبتحبها جدًا"</p>
+</div>
+
+<div class="faq" id="faq">
+  <h2 class="section-title">الأسئلة الشائعة</h2>
+  <h3>هل المنتجات أصلية؟</h3>
+  <p>نعم، جميع منتجاتنا أصلية ومضمونة.</p>
+  <h3>هل يمكن الدفع عند الاستلام؟</h3>
+  <p>نعم، نوفر هذه الخدمة داخل مصر.</p>
+</div>
+
+<div class="newsletter" id="newsletter">
+  <h2 class="section-title">اشترك في النشرة البريدية</h2>
+  <p>كن أول من يعرف العروض الجديدة والخصومات!</p>
+  <input type="email" placeholder="اكتب بريدك الإلكتروني هنا">
+</div>
+
+  </div>  <footer>
+    © 2025 Yoshop | تصميم عالمي | رقم التواصل: 01013324490
+  </footer>  <script>
+    const countdownEl = document.getElementById("countdown");
+    const targetDate = new Date();
+    targetDate.setHours(targetDate.getHours() + 4);
+
+    function updateCountdown() {
+      const now = new Date();
+      const diff = targetDate - now;
+
+      if (diff <= 0) {
+        countdownEl.textContent = "انتهى العرض!";
+        return;
+      }
+
+      const hours = String(Math.floor((diff / (1000 * 60 * 60)) % 24)).padStart(2, '0');
+      const minutes = String(Math.floor((diff / (1000 * 60)) % 60)).padStart(2, '0');
+      const seconds = String(Math.floor((diff / 1000) % 60)).padStart(2, '0');
+
+      countdownEl.textContent = `العرض ينتهي خلال: ${hours}:${minutes}:${seconds}`;
+    }
+
+    setInterval(updateCountdown, 1000);
+  </script></body>
+  </html>
